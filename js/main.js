@@ -44,5 +44,8 @@ $(document).ready(function() {
 
 
 // HOVER BOX AND ANIMATION
-
-
+let workHover = document.getElementsByClassName("workHover");
+let boxWork = document.getElementsByClassName("boxWork");
+workHover.addEventListener("mouseover", event => {
+  boxWork.style.transform = "scale(1.2)"
+});
