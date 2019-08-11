@@ -1,10 +1,37 @@
+// let tl = new TimelineMax({options});
+// let tween = TweenMax.to($(".introBox"), 1, {
+//   x: '-=50', // Tween to the current x value minus 50
+//   y: '+=50', // Tween to the current y value plus 50
+//   onComplete: myFunction,
+//   ease:Back.easeOut
+// });
+// tl.add(tween, 1);
+
 $(document).ready(function(){
-  $(".introBox").hide();
+  $(".playHover").hide();
   event.preventDefault();
 });
 $(document).ready(function(){
-  $(".introBox").delay(13000).show(500);
+  $(".workHover").hide();
+  event.preventDefault();
 });
+$(document).ready(function(){
+  $(".navbar").hide();
+  event.preventDefault();
+});
+
+$(document).ready(function(){
+  $(".playHover").delay(15000).show(1000);
+});
+$(document).ready(function(){
+  $(".workHover").delay(13000).show(1000);
+});
+
+$(document).ready(function(){
+  $(".navbar").delay(14000).show(1000);
+});
+
+
 
 
 // $(document).ready(function() {
@@ -42,10 +69,22 @@ $(document).ready(function() {
   $(".contentPost2").delay(2500).fadeOut(500);
 });
 
+let noScale = document.getElementsByClassName("")
 
 // HOVER BOX AND ANIMATION
-let workHover = document.getElementsByClassName("workHover");
-let boxWork = document.getElementsByClassName("boxWork");
-workHover.addEventListener("mouseover", event => {
-  boxWork.style.transform = "scale(1.2)"
+// let workHover = document.getElementsByClassName("workHover");
+// let boxWork = document.getElementsByClassName("boxWork");
+// workHover.addEventListener("mouseover", event => {
+//   boxWork.style.transform = "scale(1.2)"
+// });
+
+
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
 });
+
+

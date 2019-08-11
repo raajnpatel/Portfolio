@@ -8,74 +8,69 @@ header {
   vertical-align: center;
   justify-items: center;
 }
-/* Dropdown Button */
-.quickMenu {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  position: center;
-  text-align: center;
-  vertical-align: center;
-  justify-items: center;
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: 0.3px solid darkorange;
-}
-.quickMenu:hover {
-  background-color: darkorange;
-  border: 0.3px solid darkgreen;
-  transition: 500ms;
-}
-/* The container <div> - needed to position the dropdown content */
-.navBase {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  position: center;
-  text-align: center;
-  vertical-align: center;
-  justify-items: center;
-  position: relative;
-  display: inline-block;
-}
-.navMid {
-  width: 100vw;
+.navbar {
+  position: fixed;
+  top: 0;
   height: 46px;
-  position: absolute;
-  left: -243px;
+  background-color: #1b1b1b;
 }
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.dropdown {
+  float: left;
+  position: relative;
+}
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: red;
+}
+.dropdown-one {
+  cursor: pointer;
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 600px;
+  background-color: darkslategrey;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+.dropdown-two {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  left: 160px;
+  top: 0px;
+  min-width: 160px;
+  background-color: dimgrey;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.dropdown:hover .dropdown-one,
+#link1:hover > .dropdown-two {
   display: block;
-  width: 100%;
 }
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
+.dropdown-one .dItem {
+  color: white;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
 }
-/* Show the dropdown menu on hover */
-.navBase:hover .dropdown-content {
-  display: flex;
-}
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.navBase:hover .dropbtn {
-  background-color: #3e8e41;
+.dropdown-one .dItem:hover,
+.dropdown-two a:hover {
+  background-color: red;
 }
 .truCenter {
   display: flex;
@@ -117,6 +112,10 @@ header {
   vertical-align: center;
   justify-items: center;
   height: 94vh;
+}
+.splash h1 {
+  display: flex;
+  font-size: 2rem;
 }
 .splash h2 {
   color: white;
@@ -160,10 +159,6 @@ body {
   border-width: 420px 650px 0 0;
   border-color: transparent transparent transparent transparent;
 }
-.boxWork h1 {
-  display: flex;
-  justify-content: center;
-}
 .boxPlay {
   position: absolute;
   width: 0;
@@ -172,14 +167,8 @@ body {
   border-width: 0 0 420px 650px ;
   border-color: transparent transparent transparent transparent;
 }
-.boxPlay h2 {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  margin-top: 235px;
-}
 .workHover {
-  border: 1px solid white;
+  border: 1px solid #ffa200;
   background-color: #00b330;
   height: 350px;
   width: 550px;
@@ -187,12 +176,25 @@ body {
   clip-path: polygon(100% 0, 0 0, 0 100%);
   z-index: 1;
   bottom: 5px;
+  cursor: pointer;
 }
 .workHover:hover {
   transform: scale(1.2);
 }
+.workHover h1 {
+  justify-content: flex-start;
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
+.workHover p {
+  text-align: left;
+  position: relative;
+  left: 15px;
+  bottom: 25px;
+}
 .playHover {
-  border: 1px solid white;
+  border: 1px solid #00b330;
   background-color: #ffa200;
   height: 350px;
   width: 550px;
@@ -200,7 +202,27 @@ body {
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
   z-index: 1;
   right: 0;
+  cursor: pointer;
 }
 .playHover:hover {
   transform: scale(1.2);
+}
+.playHover h1 {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  position: relative;
+  top: 275px;
+  right: 10px;
+}
+.playHover p {
+  position: relative;
+  text-align: right;
+  top: 85px;
+  right: 15px;
+}
+.playHover a {
+  background-color: initial;
+  position: absolute;
+  top: 80px;
+  right: 35px;
 }
