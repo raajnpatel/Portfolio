@@ -90,6 +90,9 @@ header {
   height: 100vh;
   z-index: -1;
 }
+.cbBorder {
+  filter: drop-shadow(-15px 20px 50px -6px #000000);
+}
 .contentPost {
   display: none;
   font-size: 2rem;
@@ -168,7 +171,7 @@ body {
   border-color: transparent transparent transparent transparent;
 }
 .workHover {
-  border: 1px solid #ffa200;
+  border: 2px solid #ffa200;
   background-color: #00b330;
   height: 350px;
   width: 550px;
@@ -194,7 +197,7 @@ body {
   bottom: 25px;
 }
 .playHover {
-  border: 1px solid #00b330;
+  border: 2px solid #00b330;
   background-color: #ffa200;
   height: 350px;
   width: 550px;

@@ -69,14 +69,25 @@ $(document).ready(function() {
   $(".contentPost2").delay(2500).fadeOut(500);
 });
 
-let noScale = document.getElementsByClassName("")
+// let noScale = document.getElementsByClassName("");
+//
+//
 
-// HOVER BOX AND ANIMATION
-// let workHover = document.getElementsByClassName("workHover");
-// let boxWork = document.getElementsByClassName("boxWork");
-// workHover.addEventListener("mouseover", event => {
-//   boxWork.style.transform = "scale(1.2)"
-// });
+
+$(document).ready(function() {
+  $(".workHover").hover(function () {
+    $(".playHover").css("filter", "blur(4px)");
+}, function(){
+  $(".playHover").css("filter", "initial");
+    })
+  });
+$(document).ready(function() {
+  $(".playHover").hover(function () {
+    $(".workHover").css("filter", "blur(4px)");
+  }, function(){
+    $(".workHover").css("filter", "initial");
+  })
+});
 
 
 $(document).ready(function(){
