@@ -7,6 +7,15 @@
 // });
 // tl.add(tween, 1);
 
+//TOP MENU
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
 $(document).ready(function(){
   $(".playHover").hide();
   event.preventDefault();
@@ -73,7 +82,7 @@ $(document).ready(function() {
 //
 //
 
-
+// Blur / Focus HOVER OPP CLASS
 $(document).ready(function() {
   $(".workHover").hover(function () {
     $(".playHover").css("filter", "blur(4px)");
@@ -90,12 +99,58 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function(){
-  $('.dropdown-submenu a.test').on("click", function(e){
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
+//INITIAL CLICK OPEN HALF
+let step = true;
+$(document).ready(function() {
+  $(".workHover").click(function () {
+    if (step === true) {
+      $(".playHover").fadeOut(1000);
+      $(".workHover").css("clip-path", "initial");
+      $(".workHover").css("z-index", "2");
+      $(".workHover").css("width", "825px");
+      $(".workHover").css("height", "525px");
+      $(".workHover").css("left", "-90px");
+      $(".workHover").css("bottom", "-70px");
+      $(".workHover").css("transition", "2s");
+      step = !step;
+    } else {
+      $(".workHover").css("clip-path", "polygon(100% 0, 0 0, 0 100%)");
+      $(".workHover").css("z-index", "1");
+      $(".workHover").css("width", "550px");
+      $(".workHover").css("height", "350px");
+      $(".workHover").css("left", "initial");
+      $(".workHover").css("bottom", "5px");
+      $(".workHover").css("transition", "2s");
+      $(".playHover").fadeIn(2000);
+      step = !step;
+    }
+  })
+});
+
+$(document).ready(function() {
+  $(".playHover").click(function () {
+    if (step === true) {
+      $(".workHover").fadeOut(1000);
+      $(".playHover").css("clip-path", "initial");
+      $(".playHover").css("z-index", "2");
+      $(".playHover").css("right", "-90px");
+      $(".playHover").css("top", "-20x");
+      $(".playHover").css("width", "825px");
+      $(".playHover").css("height", "525px");
+      $(".playHover").css("transition", "2s");
+      step = !step;
+    } else {
+      $(".playHover").css("clip-path", "polygon(100% 0, 0% 100%, 100% 100%)");
+      $(".playHover").css("z-index", "1");
+      $(".playHover").css("width", "550px");
+      $(".playHover").css("height", "350px");
+      $(".playHover").css("right", "10px");
+      $(".playHover").css("top", "5px");
+      $(".playHover").css("transition", "2s");
+      $(".workHover").fadeIn(2000);
+      step = !step;
+    }
+  })
 });
 
 

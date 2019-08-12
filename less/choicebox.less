@@ -40,9 +40,9 @@
   bottom: 5px;
   cursor: pointer;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.35);
+    transition: 2s;
   }
-
   h1 {
     justify-content: flex-start;
     position: relative;
@@ -55,6 +55,11 @@
     left: 15px;
     bottom: 25px;
   }
+  a {
+    background-color: initial;
+    position: absolute;
+    left: 30px;
+  }
 };
 
 .playHover {
@@ -65,10 +70,11 @@
   position: absolute;
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
   z-index: 1;
-  right: 0;
+  right: -5px;
   cursor: pointer;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.35);
+    transition: 2s;
   }
   h1 {
     flex-direction: row-reverse;
